@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 
 class Category(models.Model):
 
@@ -15,6 +16,14 @@ class Category(models.Model):
 
     # IntegerField = Store Integers
     likes = models.IntegerField(default=0)
+
+    # SlugField = For URL Correction
+    slug = models.SlugField(unique=True)
+
+    # Alters URL to Remove Spaces, and Make it Readable
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name) 
+        super(Category, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
