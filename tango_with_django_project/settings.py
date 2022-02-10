@@ -25,6 +25,8 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+LOGIN_URL = 'rango:login'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -36,7 +38,6 @@ SECRET_KEY = '1$&#-yzu(*e^*7+)rg@v5(np%z0g&nc_r%_lx@t61h_%e09^$%'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
